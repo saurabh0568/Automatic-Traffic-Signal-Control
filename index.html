@@ -3,40 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatic Traffic Signal Control at Crossroad</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <title>Smart Traffic Signal Control System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h2>Automatic Traffic Signal Control at Crossroad</h2>
-
+    <h2>Smart Traffic Signal Control System</h2>
     <div class="crossroad">
+        <div id="cross" class="cross"></div>
         <div class="signal" id="signal1">
             <div class="light red"></div>
             <div class="light yellow"></div>
             <div class="light green"></div>
             <div class="vehicle-count" id="vehicleCount1">0 Vehicles</div>
+            <div class="road-info">North Road</div>
         </div>
         <div class="signal" id="signal2">
             <div class="light red"></div>
             <div class="light yellow"></div>
             <div class="light green"></div>
             <div class="vehicle-count" id="vehicleCount2">0 Vehicles</div>
+            <div class="road-info">East Road</div>
         </div>
         <div class="signal" id="signal3">
             <div class="light red"></div>
             <div class="light yellow"></div>
             <div class="light green"></div>
             <div class="vehicle-count" id="vehicleCount3">0 Vehicles</div>
+            <div class="road-info">South Road</div>
         </div>
         <div class="signal" id="signal4">
             <div class="light red"></div>
             <div class="light yellow"></div>
             <div class="light green"></div>
             <div class="vehicle-count" id="vehicleCount4">0 Vehicles</div>
+            <div class="road-info">West Road</div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <h3>System Controls</h3>
+        <div class="control-row">
+            <label for="greenDuration">Green Light Duration:</label>
+            <div class="slider-container">
+                <input type="range" id="greenDuration" class="slider" min="3" max="15" value="8">
+                <span id="greenValue">8 seconds</span>
+            </div>
+        </div>
+        <div class="control-row">
+            <label for="yellowDuration">Yellow Light Duration:</label>
+            <div class="slider-container">
+                <input type="range" id="yellowDuration" class="slider" min="1" max="5" value="3">
+                <span id="yellowValue">3 seconds</span>
+            </div>
+        </div>
+        <div class="control-row">
+            <label for="trafficDensity">Traffic Density:</label>
+            <div class="slider-container">
+                <input type="range" id="trafficDensity" class="slider" min="1" max="10" value="5">
+                <span id="densityValue">Medium</span>
+            </div>
+        </div>
+        <div class="control-row">
+            <button id="toggleAuto" class="toggle-button">Automatic Mode: ON</button>
+            <button id="emergencyButton">Emergency Override</button>
+        </div>
+        <div class="system-info" id="systemInfo">
+            System running normally. Using adaptive traffic control.
+        </div>
+    </div>
+    
+    <div class="stats">
+        <h3>Traffic Statistics</h3>
+        <div class="stat-row">
+            <span>Total Vehicles Processed:</span>
+            <span id="totalVehicles">0</span>
+        </div>
+        <div class="stat-row">
+            <span>Average Wait Time:</span>
+            <span id="avgWaitTime">0 sec</span>
+        </div>
+        <div class="stat-row">
+            <span>System Efficiency:</span>
+            <span id="efficiency">0%</span>
         </div>
     </div>
 
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>
